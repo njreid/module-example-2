@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Teeeny Amplify Test</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 20px;
+      }
+    </style>
+
+    <script type="module">
+      import { configure, writeMessage } from '/lib/core.js'
+      import { login } from '/lib/auth.js'
+      import { readFile } from '/lib/storage.js'
+
+      configure('my-app-id')
+      login('userfred')
+      let contents = readFile('/this/is/a/test')
+      writeMessage(contents)
+    </script>
+  </head>
+
+  <body>
+    <h1>Messages</h1>
+    <div id="messages" />
+  </body>
+</html>
